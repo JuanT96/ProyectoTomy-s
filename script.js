@@ -14,3 +14,4 @@ setInterval(() => {
   current = (current + 1) % slides.length;
   showSlide(current);
 }, 3000); // Cambia cada 5000 milisegundos = 5 segundos
+
