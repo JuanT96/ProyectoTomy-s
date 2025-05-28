@@ -132,7 +132,7 @@ h1 {
 }
 
 /* --- SLIDER DE IMÁGENES --- */
-.slider {
+/*.slider {
   width: 100%;
   max-width: 1200px;
   height: 400px;
@@ -155,7 +155,7 @@ h1 {
 
 .slide.active {
   opacity: 1;
-}
+}*/
 
 /* --- BOTÓN WHATSAPP FLOTANTE --- */
 .btnWpp {
@@ -181,7 +181,9 @@ h1 {
   font-weight: bold;
   color: #333;
 }
-
+#quienes-somos{
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  color: whitesmoke;}
 /* --- FOOTER --- */
 footer {
   background: #d0923e;
@@ -196,4 +198,25 @@ footer a {
   color: white;
   text-decoration: none;
   margin: 0 8px;
+}
+/*Galeria interactiva*/
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.galeria img {
+  width: 30%;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
