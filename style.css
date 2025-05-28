@@ -1,4 +1,8 @@
 /* --- FONDO Y CUERPO --- */
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-image: url('fondo.png');
   background-repeat: repeat;
@@ -8,6 +12,7 @@ body {
   padding: 0;
   min-height: 100vh;
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 /* --- MENÚ DE NAVEGACIÓN --- */
@@ -18,17 +23,23 @@ header {
   background: #d0923e;
   color: white;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
-  transition: top 0.3s;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
+.logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
 .logo img {
-  height: 50px; /* puedes ajustar este valor a lo que necesites */
-  width: auto;  /* mantiene la proporción original */
+  height: 50px;
+  width: auto;
   object-fit: contain;
 }
 
@@ -41,15 +52,15 @@ header {
 
 /* Botón hamburguesa */
 #menu-toggle {
+  margin-left: auto;
   display: none;
-  font-size: 1.5em;
   background: none;
   border: none;
-  color: white;
   cursor: pointer;
+  padding: 0;
 }
 
-/* Menú móvil deslizante */
+/* Menú móvil */
 #mobile-menu {
   position: fixed;
   top: 60px;
@@ -84,19 +95,22 @@ header {
   #menu-toggle {
     display: block;
   }
+
+  header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .logo {
+    flex: 1;
+  }
 }
 
 /* --- TÍTULOS Y TEXTOS --- */
 .titulo1 {
   text-align: center;
   color: #EDE8D0;
-  text-shadow:
-    1px 1px 0 #000,
-    -1px -1px 0 #fff;
-}
-
-.p1 {
-  text-align: center;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #fff;
 }
 
 h1 {
@@ -111,6 +125,10 @@ h1 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.p1 {
+  text-align: center;
 }
 
 /* --- SLIDER DE IMÁGENES --- */
@@ -155,9 +173,13 @@ h1 {
   width: 60px;
   height: 60px;
 }
-#quienes-somos{
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  color: whitesmoke;
+.descuento {
+  background: #ffde59;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
 }
 
 /* --- FOOTER --- */
@@ -166,8 +188,6 @@ footer {
   color: white;
   text-align: center;
   padding: 20px 10px;
-  position: relative;
-  bottom: 0;
   width: 100%;
   font-size: 14px;
 }
