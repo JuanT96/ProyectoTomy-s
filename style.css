@@ -13,6 +13,7 @@ body {
   min-height: 100vh;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
+  font-family: 'Bebas Neue', cursive;
 }
 
 /* --- MENÚ DE NAVEGACIÓN --- */
@@ -20,7 +21,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #d0923e;
+  background: #000;
   color: white;
   display: flex;
   flex-direction: row;
@@ -66,7 +67,7 @@ header {
   top: 60px;
   right: 0;
   width: 200px;
-  background: #d0923e;
+  background: #ba7518;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -112,7 +113,11 @@ header {
   color: #EDE8D0;
   text-shadow: 1px 1px 0 #000, -1px -1px 0 #fff;
 }
-
+p {
+  text-align: justify;
+  color: #EDE8D0;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #fff;
+}
 h1 {
   opacity: 0;
   transform: translateY(-20px);
@@ -131,31 +136,6 @@ h1 {
   text-align: center;
 }
 
-/* --- SLIDER DE IMÁGENES --- */
-/*.slider {
-  width: 100%;
-  max-width: 1200px;
-  height: 400px;
-  margin: 50px auto;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 5px 5px 20px 5px black;
-}
-
-.slide {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  object-fit: cover;
-}
-
-.slide.active {
-  opacity: 1;
-}*/
 
 /* --- BOTÓN WHATSAPP FLOTANTE --- */
 .btnWpp {
@@ -186,7 +166,7 @@ h1 {
   color: whitesmoke;}
 /* --- FOOTER --- */
 footer {
-  background: #d0923e;
+  background: #000;
   color: white;
   text-align: center;
   padding: 20px 10px;
@@ -199,24 +179,67 @@ footer a {
   text-decoration: none;
   margin: 0 8px;
 }
-/*Galeria interactiva*/
-.galeria {
+/*Seccion Imagenes con animacion*/
+.galeria-contenedor {
+  width: 100%;
+  max-width: 900px;
+  height: 350px;
+  position: relative;
+  margin: auto;
+  overflow-x: hidden;
+}
+
+#galeria {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px 20px;
-  flex-wrap: wrap;
+  gap: 1rem;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
 }
 
-.galeria img {
-  width: 30%;
-  max-width: 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 12px;
-  cursor: pointer;
+.galeria-img {
+  height: 280px;
+  width: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  opacity: 0.7;
+  transform: scale(0.9);
+  transition: all 0.4s ease;
+  flex-shrink: 0;
 }
 
-.galeria img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+.galeria-img.grande {
+  width: 260px;
+  height: 320px;
+  opacity: 1;
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.posicion-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: white;
+}
+
+.izq { left: 0; }
+.der { right: 0; }
+
+/*formulario*/
+form input,
+form select {
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+form button {
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: #ba7518;
+  border: none;
+}
+
+form button:hover {
+  background-color: #a66212;
 }
